@@ -2,7 +2,7 @@
     <id>com.github.zxj5470.clpstfx</id>
     <name>CLion Postfix Completion</name>
     <vendor email="zxj5470@foxmail.com" url="http://www.github.com/zxj5470">zxj5470</vendor>
-    <description>CLion Postfix for print and </description>
+    <description>CLion Postfix for printf and cout</description>
     <depends optional="true">com.intellij.modules.clion</depends>
     <depends optional="true">com.intellij.modules.cidr.lang</depends>
     <extensions defaultExtensionNs="com.intellij">
