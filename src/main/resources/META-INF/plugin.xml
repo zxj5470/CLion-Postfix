@@ -1,0 +1,17 @@
+<idea-plugin>
+    <id>com.github.zxj5470.clpstfx</id>
+    <name>CLion Postfix</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description>CLion Postfix for print and </description>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <codeInsight.template.postfixTemplateProvider
+                language="ObjectiveC"
+                implementationClass="com.github.zxj5470.clpstfx.ClionPostfixTemplateProvider"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
