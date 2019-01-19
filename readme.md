@@ -1,6 +1,6 @@
 # CLion Postfix Completion
 
-[![](https://tinyurl.com/jb-unofficial-flat-square)](https://github.com/ice1000/julia-intellij)
+[![](https://tinyurl.com/jb-unofficial-flat-square)](https://plugins.jetbrains.com/plugin/11171-clion-postfix-completion)
 [![JetBrains plugins](https://img.shields.io/jetbrains/plugin/v/11171-clion-postfix-completion.svg?style=flat-square)](https://plugins.jetbrains.com/plugin/11171-clion-postfix-completion)
 [![JetBrains plugins](https://img.shields.io/jetbrains/plugin/d/11171-clion-postfix-completion.svg?style=flat-square)](https://plugins.jetbrains.com/plugin/11171-clion-postfix-completion)
 # Usage
