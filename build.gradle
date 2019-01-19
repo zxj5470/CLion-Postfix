@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.jetbrains.intellij' version '0.3.11'
-    id 'org.jetbrains.kotlin.jvm' version '1.2.51'
+    id 'org.jetbrains.intellij' version '0.3.12'
+    id 'org.jetbrains.kotlin.jvm' version '1.2.70'
 }
 
 group 'com.github.zxj5470'
@@ -32,5 +32,5 @@ intellij {
 
 patchPluginXml {
     pluginDescription(file("description.html").text)
-    changeNotes """"""
+    changeNotes(file("changeNotes.html").text)
 }

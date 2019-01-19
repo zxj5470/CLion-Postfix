@@ -33,7 +33,9 @@ class ClionPostfixTemplateProvider : PostfixTemplateProvider {
     init {
         myTemplates = ContainerUtil.newHashSet(
                 CLionPrintfPostfixTemplate(this),
-                CLionCoutPostfixTemplate(this)
+                CLionPrintflnPostfixTemplate(this),
+                CLionCoutPostfixTemplate(this),
+                CLionCoutlnPostfixTemplate(this)
         )
     }
 
@@ -45,7 +47,13 @@ class ClionPostfixTemplateProvider : PostfixTemplateProvider {
 }
 
 class CLionPrintfPostfixTemplate(provider: PostfixTemplateProvider) :
-        StringBasedPostfixTemplate("printf", "printf(expr)", selectorTopmost(), provider) {
+        StringBasedPostfixTemplate("printf", "printf(\"...\", expr)", selectorTopmost(), provider) {
+    override fun getTemplateString(psiElement: PsiElement): String? = "printf(\"%\$END\$\", \$expr\$);"
+    override fun getElementToRemove(expr: PsiElement): PsiElement = expr
+}
+
+class CLionPrintflnPostfixTemplate(provider: PostfixTemplateProvider) :
+        StringBasedPostfixTemplate("printfln", "printf(\"...\\n\", expr)", selectorTopmost(), provider) {
     override fun getTemplateString(psiElement: PsiElement): String? = "printf(\"%\$END\$\", \$expr\$);"
     override fun getElementToRemove(expr: PsiElement): PsiElement = expr
 }
@@ -53,5 +61,11 @@ class CLionPrintfPostfixTemplate(provider: PostfixTemplateProvider) :
 class CLionCoutPostfixTemplate(provider: PostfixTemplateProvider) :
         StringBasedPostfixTemplate("cout", "std::cout << expr;", selectorTopmost(), provider) {
     override fun getTemplateString(psiElement: PsiElement): String? = "std::cout << \$expr\$;"
+    override fun getElementToRemove(expr: PsiElement): PsiElement = expr
+}
+
+class CLionCoutlnPostfixTemplate(provider: PostfixTemplateProvider) :
+        StringBasedPostfixTemplate("coutln", "std::cout << expr << std::endl", selectorTopmost(), provider) {
+    override fun getTemplateString(psiElement: PsiElement): String? = "std::cout << \$expr\$ << std::endl;"
     override fun getElementToRemove(expr: PsiElement): PsiElement = expr
 }

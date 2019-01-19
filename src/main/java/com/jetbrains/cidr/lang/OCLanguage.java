@@ -44,7 +44,7 @@ public class OCLanguage extends Language {
 
             @NotNull
             public SyntaxHighlighter getSyntaxHighlighter(Project var1, VirtualFile var2) {
-                OCLanguageKind var3 = CLanguageKind.maxLanguage(var1);
+                OCLanguageKind var3 = CLanguageKind.maxLanguage();
                 if (var2 != null && !(var2 instanceof VirtualFileWindow) && var2.isValid() && var1 != null) {
                     PsiFile var4 = PsiManager.getInstance(var1).findFile(var2);
                     OCFile var5 = var4 instanceof OCFile ? (OCFile)var4 : null;
